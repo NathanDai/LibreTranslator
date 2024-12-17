@@ -41,9 +41,10 @@ const App = () => {
                 body.source_lang = sourceLang;
             }
 
-            const response = await fetch(`${process.env.REACT_APP_DEEPLX_API_URL}/translate?token=${process.env.REACT_APP_API_TOKEN}`, {
+            const response = await fetch(`${process.env.REACT_APP_DEEPL_API_URL}/v2/translate`, {
                 method: 'POST',
                 headers: {
+                    'Authorization': `${process.env.REACT_APP_DEEPL_API_Authorization}`,
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify(body)
