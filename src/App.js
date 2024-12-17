@@ -46,10 +46,11 @@ const App = () => {
                 headers: {
                     'Authorization': `${process.env.REACT_APP_DEEPL_API_Authorization}`,
                     'Content-Type': 'application/json',
-                },
+                },                
                 body: JSON.stringify(body)
             });
 
+            console.console.log(body);
             const data = await response.json();
 
             if (data.code === 200) {
